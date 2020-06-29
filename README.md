@@ -3,8 +3,8 @@
 Your CSS framework should support the following features. Use this checklist to mark off each feature as you complete it. 
 
 - Setup name made a repo
-  - [ ] Named your framework
-  - [ ] Made a repo
+  - [x] Named your framework
+  - [x] Made a repo
   - [ ] Stretch: organize files in folders
   - Font styles styled basic text elements
   - [ ] Defined a font stack on the body 
