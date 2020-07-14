@@ -7,15 +7,15 @@ Your CSS framework should support the following features. Use this checklist to 
   - [x] Made a repo
   - [ ] Stretch: organize files in folders
   - Font styles styled basic text elements
-  - [ ] Defined a font stack on the body 
-  - [ ] Styled headings: h1-6
+  - [x] Defined a font stack on the body 
+  - [x] Styled headings: h1-6
   - [ ] Styled inline elements: strong, em, code
   - [ ] Style `<a>` tag. Include `:hover` styles
   - [ ] **Stretch:** style `<mark>`
   - [ ] **Stretch:** add a style for text selection, [read this](https://www.w3schools.com/cssref/sel_selection.asp)
   - [ ] **Stretch:** Add color classes. Follow the example set by [Bootstrap colors](https://getbootstrap.com/docs/4.5/utilities/colors/#color)
 - [Button styles](https://github.com/Make-School-Courses/FEW-2.2-Web-Design-and-Advanced-CSS/blob/master/lessons/lesson-05.md#design-a-button) for warning, info, action, etc.
-  - [ ] Basic button styles
+  - [x ] Basic button styles
   - [ ] Alternate button styles: warning, secondary, success, Danger, info, light, and dark. 
   - [ ] document your buttons
 - [Form Elements](https://github.com/Make-School-Courses/FEW-2.2-Web-Design-and-Advanced-CSS/blob/master/lessons/lesson-06.md#challenge) 
@@ -23,7 +23,7 @@ Your CSS framework should support the following features. Use this checklist to 
   - [ ] Styled form element
   - [ ] Documented forms and inputs
 - Use [CSS Custom properties](https://github.com/Make-School-Courses/FEW-2.2-Web-Design-and-Advanced-CSS/blob/master/lessons/lesson-05.md#css-custom-properties) for colors and other repeated values 
-  - [ ] uses Custom properties
+  - [x] uses Custom properties
   - [ ] Document your custom properties
 - [Navbar style](https://github.com/Make-School-Courses/FEW-2.2-Web-Design-and-Advanced-CSS/blob/master/lessons/lesson-07.md#nav-bars) 
   - [ ] Defined navbar styles

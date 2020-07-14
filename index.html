@@ -8,7 +8,7 @@
         
         <div class="navbar1">
             <ul>
-                <li><h1 class="title">Stylin' Styles Framework</h1></li>
+                <h1 class="title">Stylin' Styles Framework</h1>
                 <li><a href="#colors">Colors</a></li>
                 <li><a href="#navbar">Navbar</a></li>
                 <li><a href="#headings">Headings</a></li>
@@ -113,7 +113,9 @@
                 <h2>Links</h2>
                 <p>This <a href="#">paragraph</a> contains a couple <a href="#">links</a> to show off their styles in context.</p>
             </section>
-    
+            
+
+            ---THIS SECTION could still use some more formatting - note: if rereading your markup comments
             <section>
                 <h2>Forms and controls</h2>
                 <form>
@@ -155,7 +157,33 @@
                 </form>
             </section>
     
-    
+        <!-- This next section built w/web components -->
+            <section>
+                <h2>CheckBox</h2>
+                  <div>
+                      <checky-box>My Burger</checky-box>
+                      <checky-box>Pickles</checky-box>
+                      <checky-box>Onions</checky-box>
+                      <checky-box>Cheese</checky-box>
+                      <checky-box>Bacon</checky-box>        
+                      <checky-box>Mustard</checky-box>
+                      <checky-box>Ketchup</checky-box>
+                      <checky-box>Mayo</checky-box>
+              
+                      <input type="checkbox">
+                      <input type="color">
+                      <input type="range">
+              
+                      <style>
+                          checky-box {
+                              margin: 4px;
+                              display: block;
+                          }
+                          ]
+                      </style>
+                  </div>
+                  <script src="checky-box.js"></script>
+                </section>
     
             <section id="colors">
                 <h1>Colors</h1>
@@ -169,13 +197,13 @@
                     
                     <div style="background-color: var(--color-md-light)">--color-md-light</div>
                     
-                    <div style="background-color: var(--color-dark); color: var(--color-background)">--color-md-dark</div>
+                    <div style="background-color: var(--color-md-dark); color: var(--color-background)">--color-md-dark</div>
                     
                     <div style="background-color: var(--color-primary); color: var(--color-background)">--color-primary</div>
                     
                     <div style="background-color: var(--color-info); color: var(--color-background)">--color-info</div>
                     
-                    <div style="background-color: var(--color-success); color: var(--color-background)">--color-success</div>
+                    <div style="background-color: var(--color-success)">--color-success</div>
                     
                     <div style="background-color: var(--color-danger); color: var(--color-background)">--color-danger</div>
                     
