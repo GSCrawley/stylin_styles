@@ -419,16 +419,15 @@
     
             <section>
                 <h3>Components</h3>
-                <p>Frmwrk CSS also includes some slideshow components. To use these include 
-                    the JS files at the bottom of the body and use the markup as shown.</p>
-    
+               
                     <pre><code>
-    ... code sample needed ...
+                        This Alien slideshow uses a custom web component that I created. 
+                        &lt;script src=&quot;./simple-slides.js&quot;&gt;&lt;script&gt;
                     </code></pre>
     
                     <div>
                         <div style="margin:2em">
-                            <simple-slides time="1500" transition="300" width="259" height="183">
+                            <simple-slides time="1500" transition="300" width="257" height="183">
                                 <img src="./images/aliens-0.jpg" width="257" height="183">
                                 <img src="./images/aliens-1.jpg" width="257" height="183">
                                 <img src="./images/aliens-2.jpg" width="257" height="183">
@@ -449,15 +448,13 @@
                 <div class="">
                     <h1>SASS to CSS Custom Properties</h1>
     
-                    <p>This example uses SASS to generate a range of colors defined 
-                        as CSS Custom Properties. See: <code>lesson-06-example-2.scss</code>
-                    </p>
+                    <pre>
+                        
+                        This example uses SASS to generate a range of colors defined 
+                        as CSS Custom Properties. These are the base colors.
+                        
+                    </pre>
     
-                    <p>Define some colors</p>
-                    <p>Look at the dictionary of colors at the top of 
-                        <code>lesson-06-example-2.scss</code>. These are the base colors.
-                    shown here. </p>
-      
       <div class="swatch-container">
         <div class="swatch" style="background-color: var(--color-gray-lighter-4)">.</div>
         <div class="swatch" style="background-color: var(--color-gray-lighter-3)">.</div>
@@ -481,10 +478,12 @@
       </div>
     
       <h2>Shade and tints</h2>
-      <p>Here are all of the colors define. Starting with the base color I lightened 
+      <pre>
+        
+        Here are all of the colors defined. Starting with the base color I lightened 
         then darkened the colors to generate 4 lighter and 4 darker colors. I used 
         SASS to do this work and had SASS output new Custom Property definitions. 
-        </p>
+        </pre>
                 
                 <div class="swatch-container">
                     <div class="swatch" style="background-color: var(--color-info-lighter-4)">.</div>
