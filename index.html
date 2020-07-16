@@ -5,22 +5,24 @@
         
     </head>
     <body class="dark">
-        
+        <section class="header">
+            <h1><blink-text time="1000">Stylin' Styles</blink-text><blink-text time="2000"> CSS Framework</blink-text></h1>
+            <script src="blink-text.js"></script>
+        </section>
+        <section class="links">
         <div class="navbar1">
-            <ul>
-                <h1 class="title">Stylin' Styles Framework</h1>
+            <nav>
                 <li><a href="#colors">Colors</a></li>
                 <li><a href="#navbar">Navbar</a></li>
                 <li><a href="#headings">Headings</a></li>
                 <li><a href="#type">Type</a></li>
                 <li><a href="#forms">forms</a>
                 <li><a href="#footer">Footer</a></li>
-            </ul>
-            <ul>
-                <li><a href="https://github.com/GSCrawley/stylin_styles.git">GitHub</a></li>
-            </ul>
+                <li><a href="https://github.com/GSCrawley/stylin_styles.git">GitHub Repo</a></li>
+                </nav>
         </div>
-    
+    </section>
+
       <div class="container">
     
             <section id="headings">
@@ -44,11 +46,10 @@
                     </code>
                 </pre>
             </section>
-            
             <section id="type">
                 <h1>Paragraph styles</h1>
                 <p>This is the <strong>strong tag</strong> in a paragraph. 
-                    This is the <em>em tag in a paragraph</em>, elements such 
+                    This is the <em>em tag in a paragraph</em>. Elements such 
                     as &lt;strong&gt; and &lt;em&gt; are inline. Here is an 
                     example of the <abbr>abbreviation tag.</abbr> You'd use
                     abbr for things like <abbr title="Hyper Text Markup Language">HTML</abbr>
@@ -56,55 +57,77 @@
                 
                 <pre>
                     <code>
-    &lt;p&gt;This is an &lt;strong&gt;average&lt;/strong&gt; paragraph. It includes some &lt;em&gt;inline&lt;/em&gt; elements such as &lt;strong&gt; and &lt;em&gt;.&lt;/p&gt;
+    &lt;p&gt;This is an &lt;strong&gt;average&lt;/strong&gt; paragraph. 
+    It includes some &lt;em&gt;inline&lt;/em&gt; elements such as &lt;strong&gt; and &lt;em&gt;.&lt;/p&gt;
                     </code>
                 </pre>
             </section>
             
 
-            <section id="forms">
+            <section id="buttons">
                 <h2>Buttons</h2>
     
-                <p>This is your average button. You might want to click it.</p>
+                <p>Here's a 3-d button. Try a long click and see what happens.</p>
                 
-                <p><button>Submit</button></p>
+                <p><button class="press">Click Me</button> <pre>
+        <code>  button:hover { background-color: var(--fg-color); color: var(--bg-color);} </code></pre> </p>
+                
+    <button class = "delete">Click Me Too!</button>
+    <p>Customize buttons by adding CSS variables inline or with a class.</p>
+    <button class="round">Go!</button> 
     
-                <pre>
-                    <code>
-    &lt;button&gt;Submit&lt;/button&gt;
-                    </code>
-                </pre>
-    
-                <p>This button has consequences. You might want to think twice before clicking.</p>
-                <p>Custimize buttons by adding CSS variables inline or with a class.</p>
-                <p>
-    <button 
-        style="font-weight: bold; background-color: #f85353;"
-    >Delete</button>
-        <button 
-        style="background-color: #6bc253;"
-    >Go!</button>
-                </p>
-    
-                <pre>
-                    <code>
-    &lt;button 
-        style=&quot;--weight: bold; 
-        --background-color: #f85353;&quot;
-    &gt;Delete&lt;/button&gt;
-    
-    &lt;button 
-        style=&quot;--background-color: #6bc253;&quot;
-    &gt;Go!&lt;/button&gt;
-                    </code>
-                </pre>
+<p><button style= font-size:1.5rem>Hello World!</button></p>
 
-    <button class="hello">Hello World!</button>
-    <button>Login</button>
-    <button class="warning">Delete</button>
-    <button class="action">Buy Now!</button>
+<p><button class="shadow">Shadow</button></p>
+
     
-            
+<pre>
+    <code>
+    &lt;button class=&quot;round&quot;&gt; Go! &lt;/button&gt;
+
+    referring to class in CSS file:
+    button.round {
+    border-radius: 1.5em;
+    font-weight: bold;
+    background-color: #6bc253; 
+    color: black;
+    }
+
+    button.round:hover {
+    background-color: #6bc253;
+    color: white;
+    }
+</code>
+</pre>
+    <pre>
+        <code>
+   "Hello World" Inline style:
+    &lt;button style=font-size:2rem&gt;Hello World!&lt;/button&gt;
+</p>
+</code>
+</pre>
+<pre>
+    <code>
+    button.shadow {
+        --bg-color: tomato; /* Red button */
+        --fg-color: white;
+        }
+    button.shadow:hover {
+        background-color: var(--fg-color);
+        color: var(--bg-color);
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+    </code>
+</pre>
+
+    <pre>
+        <code>
+
+
+
+        </code>
+    </pre>
+
             </section>
             
 
@@ -189,13 +212,15 @@
                 <h1>Colors</h1>
                 <div class="color-grid">
                     
-                    <div style="background-color: var(--color-background)">--color-background</div>
-                    <div style="background-color: var(--color-foreground); color: var(--color-background)">--color-foreground</div>
+                    <div style="background-color: var(--foreground-color); color: var(--color-background)">--color-foreground</div>
+                    
+                    <div style="background-color: var(--background-color)">--color-background</div>
+
                     <div style="background-color: var(--color-dark); color: var(--color-background)">--color-dark</div>
                     
-                    <div style="background-color: var(--color-light)">--color-light</div>
+                    <div style="background-color: var(--color-light); color: var(--color-background)">--color-light</div>
                     
-                    <div style="background-color: var(--color-md-light)">--color-md-light</div>
+                    <div style="background-color: var(--color-md-light); color: var(--color-background)">--color-md-light</div>
                     
                     <div style="background-color: var(--color-md-dark); color: var(--color-background)">--color-md-dark</div>
                     
@@ -203,11 +228,11 @@
                     
                     <div style="background-color: var(--color-info); color: var(--color-background)">--color-info</div>
                     
-                    <div style="background-color: var(--color-success)">--color-success</div>
+                    <div style="background-color: var(--color-success); color: var(--color-background)">--color-success</div>
                     
                     <div style="background-color: var(--color-danger); color: var(--color-background)">--color-danger</div>
                     
-                    <div style="background-color: var(--color-callout)">--color-callout</div>
+                    <div style="background-color: var(--color-callout); color: var(--color-background)">--color-callout</div>
                     <div style="background-color: var(--color-lightest)">--color-lightest</div>
                 </div>
             </section>
@@ -403,36 +428,19 @@
     
                     <div>
                         <div style="margin:2em">
-                            <frmwrk-slides time="5000">
-                                <img src="./images/aliens-0.jpeg" width="259" height="194">
-                                <img src="./images/aliens-1.jpeg" width="257" height="196">
-                                <img src="./images/aliens-2.jpeg" width="259" height="194">
-                                <img src="./images/aliens-3.jpeg" width="275" height="183">
-                                <img src="./images/aliens-4.jpeg" width="275" height="183">
-                                <img src="./images/aliens-5.jpeg" width="275" height="183">
-                            </frmwrk-slides>
+                            <simple-slides time="1500" transition="300" width="259" height="183">
+                                <img src="./images/aliens-0.jpg" width="257" height="183">
+                                <img src="./images/aliens-1.jpg" width="257" height="183">
+                                <img src="./images/aliens-2.jpg" width="257" height="183">
+                                <img src="./images/aliens-3.jpg" width="257" height="183">
+                                <img src="./images/aliens-4.jpg" width="257" height="183">
+                                <img src="./images/aliens-5.jpeg" width="257" height="183">
+                            </simple-slides>
                         </div>
-                        <div style="margin:2em">
-                            <frmwrk-slides-2 time="5000" style="width:257px; height:183;">
-                                <img src="./images/aliens-0.jpeg" width="259" height="194">
-                                <img src="./images/aliens-1.jpeg" width="257" height="196">
-                                <img src="./images/aliens-2.jpeg" width="259" height="194">
-                                <img src="./images/aliens-3.jpeg" width="275" height="183">
-                                <img src="./images/aliens-4.jpeg" width="275" height="183">
-                                <img src="./images/aliens-5.jpeg" width="275" height="183">
-                            </frmwrk-slides-2>
-                        </div>
-                        <div style="margin:2em">
-                            <frmwrk-slides-2 time="5000" vertical style="width:257px; height:183;">
-                                <img src="./images/kitten-0.jpeg" width="259" height="194">
-                                <img src="./images/kitten-1.jpeg" width="257" height="196">
-                                <img src="./images/kitten-2.jpeg" width="259" height="194">
-                                <img src="./images/kitten-3.jpeg" width="275" height="183">
-                                <img src="./images/kitten-4.jpeg" width="275" height="183">
-                                <img src="./images/kitten-5.jpeg" width="275" height="183">
-                            </frmwrk-slides-2>
-                        </div>
+                       
                     </div>
+                    
+
             </section>
     
             <section>
@@ -451,25 +459,25 @@
                     shown here. </p>
       
       <div class="swatch-container">
-        <div class="swatch" style="background-color: var(--color-gray-lighter-4)"></div>
-        <div class="swatch" style="background-color: var(--color-gray-lighter-3)"></div>
-        <div class="swatch" style="background-color: var(--color-gray-lighter-2)"></div>
-        <div class="swatch" style="background-color: var(--color-gray-lighter-1)"></div>
-        <div class="swatch" style="background-color: var(--color-gray)"></div>
-        <div class="swatch" style="background-color: var(--color-gray-darker-1)"></div>
-        <div class="swatch" style="background-color: var(--color-gray-darker-2)"></div>
-        <div class="swatch" style="background-color: var(--color-gray-darker-3)"></div>
-        <div class="swatch" style="background-color: var(--color-gray-darker-4)"></div>
+        <div class="swatch" style="background-color: var(--color-gray-lighter-4)">.</div>
+        <div class="swatch" style="background-color: var(--color-gray-lighter-3)">.</div>
+        <div class="swatch" style="background-color: var(--color-gray-lighter-2)">.</div>
+        <div class="swatch" style="background-color: var(--color-gray-lighter-1);color: var(--color-background)">.</div>
+        <div class="swatch" style="background-color: var(--color-gray);color: var(--color-background)">.</div>
+        <div class="swatch" style="background-color: var(--color-gray-darker-1);color: var(--color-background)">.</div>
+        <div class="swatch" style="background-color: var(--color-gray-darker-2);color: var(--color-background)">.</div>
+        <div class="swatch" style="background-color: var(--color-gray-darker-3);color: var(--color-background)">.</div>
+        <div class="swatch" style="background-color: var(--color-gray-darker-4);color: var(--color-background)">.</div>
     
-        <div class="swatch" style="background-color: var(--color-info)"></div>
-        <div class="swatch" style="background-color: var(--color-success)"></div>
-        <div class="swatch" style="background-color: var(--color-danger)"></div>
-        <div class="swatch" style="background-color: var(--color-callout)"></div>
-        <div class="swatch" style="background-color: var(--color-secondary)"></div>
-        <div class="swatch" style="background-color: var(--color-other)"></div>
-        <div class="swatch" style="background-color: var(--color-alternate)"></div>
-        <div class="swatch" style="background-color: var(--color-primary)"></div>
-        <div class="swatch" style="background-color: var(--color-gray)"></div>
+        <div class="swatch" style="background-color: var(--color-info);color: var(--color-background)">.</div>
+        <div class="swatch" style="background-color: var(--color-success);color: var(--color-background)">.</div>
+        <div class="swatch" style="background-color: var(--color-danger);color: var(--color-background)">.</div>
+        <div class="swatch" style="background-color: var(--color-callout);color: var(--color-background)">.</div>
+        <div class="swatch" style="background-color: var(--color-secondary)">.</div>
+        <div class="swatch" style="background-color: var(--color-other);color: var(--color-background)">.</div>
+        <div class="swatch" style="background-color: var(--color-alternate);color: var(--color-background)">.</div>
+        <div class="swatch" style="background-color: var(--color-primary);color: var(--color-background)">.</div>
+        <div class="swatch" style="background-color: var(--color-gray);color: var(--color-background)">.</div>
       </div>
     
       <h2>Shade and tints</h2>
@@ -479,95 +487,95 @@
         </p>
                 
                 <div class="swatch-container">
-                    <div class="swatch" style="background-color: var(--color-info-lighter-4)"></div>
-                    <div class="swatch" style="background-color: var(--color-info-lighter-3)"></div>
-                    <div class="swatch" style="background-color: var(--color-info-lighter-2)"></div>
-                    <div class="swatch" style="background-color: var(--color-info-lighter-1)"></div>
-                    <div class="swatch" style="background-color: var(--color-info)"></div>
-                    <div class="swatch" style="background-color: var(--color-info-darker-1)"></div>
-                    <div class="swatch" style="background-color: var(--color-info-darker-2)"></div>
-                    <div class="swatch" style="background-color: var(--color-info-darker-3)"></div>
-                    <div class="swatch" style="background-color: var(--color-info-darker-4)"></div>
+                    <div class="swatch" style="background-color: var(--color-info-lighter-4)">.</div>
+                    <div class="swatch" style="background-color: var(--color-info-lighter-3)">.</div>
+                    <div class="swatch" style="background-color: var(--color-info-lighter-2)">.</div>
+                    <div class="swatch" style="background-color: var(--color-info-lighter-1)">.</div>
+                    <div class="swatch" style="background-color: var(--color-info)">.</div>
+                    <div class="swatch" style="background-color: var(--color-info-darker-1)">.</div>
+                    <div class="swatch" style="background-color: var(--color-info-darker-2)">.</div>
+                    <div class="swatch" style="background-color: var(--color-info-darker-3)">.</div>
+                    <div class="swatch" style="background-color: var(--color-info-darker-4)">.</div>
     
-                    <div class="swatch" style="background-color: var(--color-success-lighter-4)"></div>
-                    <div class="swatch" style="background-color: var(--color-success-lighter-3)"></div>
-                    <div class="swatch" style="background-color: var(--color-success-lighter-2)"></div>
-                    <div class="swatch" style="background-color: var(--color-success-lighter-1)"></div>
-                    <div class="swatch" style="background-color: var(--color-success)"></div>
-                    <div class="swatch" style="background-color: var(--color-success-darker-1)"></div>
-                    <div class="swatch" style="background-color: var(--color-success-darker-2)"></div>
-                    <div class="swatch" style="background-color: var(--color-success-darker-3)"></div>
-                    <div class="swatch" style="background-color: var(--color-success-darker-4)"></div>
+                    <div class="swatch" style="background-color: var(--color-success-lighter-4)">.</div>
+                    <div class="swatch" style="background-color: var(--color-success-lighter-3)">.</div>
+                    <div class="swatch" style="background-color: var(--color-success-lighter-2)">.</div>
+                    <div class="swatch" style="background-color: var(--color-success-lighter-1)">.</div>
+                    <div class="swatch" style="background-color: var(--color-success)">.</div>
+                    <div class="swatch" style="background-color: var(--color-success-darker-1)">.</div>
+                    <div class="swatch" style="background-color: var(--color-success-darker-2)">.</div>
+                    <div class="swatch" style="background-color: var(--color-success-darker-3)">.</div>
+                    <div class="swatch" style="background-color: var(--color-success-darker-4)">.</div>
     
-                    <div class="swatch" style="background-color: var(--color-danger-lighter-4)"></div>
-                    <div class="swatch" style="background-color: var(--color-danger-lighter-3)"></div>
-                    <div class="swatch" style="background-color: var(--color-danger-lighter-2)"></div>
-                    <div class="swatch" style="background-color: var(--color-danger-lighter-1)"></div>
-                    <div class="swatch" style="background-color: var(--color-danger)"></div>
-                    <div class="swatch" style="background-color: var(--color-danger-darker-1)"></div>
-                    <div class="swatch" style="background-color: var(--color-danger-darker-2)"></div>
-                    <div class="swatch" style="background-color: var(--color-danger-darker-3)"></div>
-                    <div class="swatch" style="background-color: var(--color-danger-darker-4)"></div>
+                    <div class="swatch" style="background-color: var(--color-danger-lighter-4)">.</div>
+                    <div class="swatch" style="background-color: var(--color-danger-lighter-3)">.</div>
+                    <div class="swatch" style="background-color: var(--color-danger-lighter-2)">.</div>
+                    <div class="swatch" style="background-color: var(--color-danger-lighter-1)">.</div>
+                    <div class="swatch" style="background-color: var(--color-danger)">.</div>
+                    <div class="swatch" style="background-color: var(--color-danger-darker-1)">.</div>
+                    <div class="swatch" style="background-color: var(--color-danger-darker-2)">.</div>
+                    <div class="swatch" style="background-color: var(--color-danger-darker-3)">.</div>
+                    <div class="swatch" style="background-color: var(--color-danger-darker-4)">.</div>
     
-                    <div class="swatch" style="background-color: var(--color-callout-lighter-4)"></div>
-                    <div class="swatch" style="background-color: var(--color-callout-lighter-3)"></div>
-                    <div class="swatch" style="background-color: var(--color-callout-lighter-2)"></div>
-                    <div class="swatch" style="background-color: var(--color-callout-lighter-1)"></div>
-                    <div class="swatch" style="background-color: var(--color-callout)"></div>
-                    <div class="swatch" style="background-color: var(--color-callout-darker-1)"></div>
-                    <div class="swatch" style="background-color: var(--color-callout-darker-2)"></div>
-                    <div class="swatch" style="background-color: var(--color-callout-darker-3)"></div>
-                    <div class="swatch" style="background-color: var(--color-callout-darker-4)"></div>
+                    <div class="swatch" style="background-color: var(--color-callout-lighter-4)">.</div>
+                    <div class="swatch" style="background-color: var(--color-callout-lighter-3)">.</div>
+                    <div class="swatch" style="background-color: var(--color-callout-lighter-2)">.</div>
+                    <div class="swatch" style="background-color: var(--color-callout-lighter-1)">.</div>
+                    <div class="swatch" style="background-color: var(--color-callout)">.</div>
+                    <div class="swatch" style="background-color: var(--color-callout-darker-1)">.</div>
+                    <div class="swatch" style="background-color: var(--color-callout-darker-2)">.</div>
+                    <div class="swatch" style="background-color: var(--color-callout-darker-3)">.</div>
+                    <div class="swatch" style="background-color: var(--color-callout-darker-4)">.</div>
     
-                    <div class="swatch" style="background-color: var(--color-secondary-lighter-4)"></div>
-                    <div class="swatch" style="background-color: var(--color-secondary-lighter-3)"></div>
-                    <div class="swatch" style="background-color: var(--color-secondary-lighter-2)"></div>
-                    <div class="swatch" style="background-color: var(--color-secondary-lighter-1)"></div>
-                    <div class="swatch" style="background-color: var(--color-secondary)"></div>
-                    <div class="swatch" style="background-color: var(--color-secondary-darker-1)"></div>
-                    <div class="swatch" style="background-color: var(--color-secondary-darker-2)"></div>
-                    <div class="swatch" style="background-color: var(--color-secondary-darker-3)"></div>
-                    <div class="swatch" style="background-color: var(--color-secondary-darker-4)"></div>
+                    <div class="swatch" style="background-color: var(--color-secondary-lighter-4)">.</div>
+                    <div class="swatch" style="background-color: var(--color-secondary-lighter-3)">.</div>
+                    <div class="swatch" style="background-color: var(--color-secondary-lighter-2)">.</div>
+                    <div class="swatch" style="background-color: var(--color-secondary-lighter-1)">.</div>
+                    <div class="swatch" style="background-color: var(--color-secondary)">.</div>
+                    <div class="swatch" style="background-color: var(--color-secondary-darker-1)">.</div>
+                    <div class="swatch" style="background-color: var(--color-secondary-darker-2)">.</div>
+                    <div class="swatch" style="background-color: var(--color-secondary-darker-3)">.</div>
+                    <div class="swatch" style="background-color: var(--color-secondary-darker-4)">.</div>
     
-                    <div class="swatch" style="background-color: var(--color-other-lighter-4)"></div>
-                    <div class="swatch" style="background-color: var(--color-other-lighter-3)"></div>
-                    <div class="swatch" style="background-color: var(--color-other-lighter-2)"></div>
-                    <div class="swatch" style="background-color: var(--color-other-lighter-1)"></div>
-                    <div class="swatch" style="background-color: var(--color-other)"></div>
-                    <div class="swatch" style="background-color: var(--color-other-darker-1)"></div>
-                    <div class="swatch" style="background-color: var(--color-other-darker-2)"></div>
-                    <div class="swatch" style="background-color: var(--color-other-darker-3)"></div>
-                    <div class="swatch" style="background-color: var(--color-other-darker-4)"></div>
+                    <div class="swatch" style="background-color: var(--color-other-lighter-4)">.</div>
+                    <div class="swatch" style="background-color: var(--color-other-lighter-3)">.</div>
+                    <div class="swatch" style="background-color: var(--color-other-lighter-2)">.</div>
+                    <div class="swatch" style="background-color: var(--color-other-lighter-1)">.</div>
+                    <div class="swatch" style="background-color: var(--color-other)">.</div>
+                    <div class="swatch" style="background-color: var(--color-other-darker-1)">.</div>
+                    <div class="swatch" style="background-color: var(--color-other-darker-2)">.</div>
+                    <div class="swatch" style="background-color: var(--color-other-darker-3)">.</div>
+                    <div class="swatch" style="background-color: var(--color-other-darker-4)">.</div>
     
-                    <div class="swatch" style="background-color: var(--color-alternate-lighter-4)"></div>
-                    <div class="swatch" style="background-color: var(--color-alternate-lighter-3)"></div>
-                    <div class="swatch" style="background-color: var(--color-alternate-lighter-2)"></div>
-                    <div class="swatch" style="background-color: var(--color-alternate-lighter-1)"></div>
-                    <div class="swatch" style="background-color: var(--color-alternate)"></div>
-                    <div class="swatch" style="background-color: var(--color-alternate-darker-1)"></div>
-                    <div class="swatch" style="background-color: var(--color-alternate-darker-2)"></div>
-                    <div class="swatch" style="background-color: var(--color-alternate-darker-3)"></div>
-                    <div class="swatch" style="background-color: var(--color-alternate-darker-4)"></div>
+                    <div class="swatch" style="background-color: var(--color-alternate-lighter-4)">.</div>
+                    <div class="swatch" style="background-color: var(--color-alternate-lighter-3)">.</div>
+                    <div class="swatch" style="background-color: var(--color-alternate-lighter-2)">.</div>
+                    <div class="swatch" style="background-color: var(--color-alternate-lighter-1)">.</div>
+                    <div class="swatch" style="background-color: var(--color-alternate)">.</div>
+                    <div class="swatch" style="background-color: var(--color-alternate-darker-1)">.</div>
+                    <div class="swatch" style="background-color: var(--color-alternate-darker-2)">.</div>
+                    <div class="swatch" style="background-color: var(--color-alternate-darker-3)">.</div>
+                    <div class="swatch" style="background-color: var(--color-alternate-darker-4)">.</div>
     
-                    <div class="swatch" style="background-color: var(--color-gray-lighter-4)"></div>
-                    <div class="swatch" style="background-color: var(--color-gray-lighter-3)"></div>
-                    <div class="swatch" style="background-color: var(--color-gray-lighter-2)"></div>
-                    <div class="swatch" style="background-color: var(--color-gray-lighter-1)"></div>
-                    <div class="swatch" style="background-color: var(--color-gray)"></div>
-                    <div class="swatch" style="background-color: var(--color-gray-darker-1)"></div>
-                    <div class="swatch" style="background-color: var(--color-gray-darker-2)"></div>
-                    <div class="swatch" style="background-color: var(--color-gray-darker-3)"></div>
-                    <div class="swatch" style="background-color: var(--color-gray-darker-4)"></div>
+                    <div class="swatch" style="background-color: var(--color-gray-lighter-4)">.</div>
+                    <div class="swatch" style="background-color: var(--color-gray-lighter-3)">.</div>
+                    <div class="swatch" style="background-color: var(--color-gray-lighter-2)">.</div>
+                    <div class="swatch" style="background-color: var(--color-gray-lighter-1)">.</div>
+                    <div class="swatch" style="background-color: var(--color-gray)">.</div>
+                    <div class="swatch" style="background-color: var(--color-gray-darker-1)">.</div>
+                    <div class="swatch" style="background-color: var(--color-gray-darker-2)">.</div>
+                    <div class="swatch" style="background-color: var(--color-gray-darker-3)">.</div>
+                    <div class="swatch" style="background-color: var(--color-gray-darker-4)">.</div>
     
-                    <div class="swatch" style="background-color: var(--color-primary-lighter-4)"></div>
-                    <div class="swatch" style="background-color: var(--color-primary-lighter-3)"></div>
-                    <div class="swatch" style="background-color: var(--color-primary-lighter-2)"></div>
-                    <div class="swatch" style="background-color: var(--color-primary-lighter-1)"></div>
-                    <div class="swatch" style="background-color: var(--color-primary)"></div>
-                    <div class="swatch" style="background-color: var(--color-primary-darker-1)"></div>
-                    <div class="swatch" style="background-color: var(--color-primary-darker-2)"></div>
-                    <div class="swatch" style="background-color: var(--color-primary-darker-3)"></div>
-                    <div class="swatch" style="background-color: var(--color-primary-darker-4)"></div>
+                    <div class="swatch" style="background-color: var(--color-primary-lighter-4)">.</div>
+                    <div class="swatch" style="background-color: var(--color-primary-lighter-3)">.</div>
+                    <div class="swatch" style="background-color: var(--color-primary-lighter-2)">.</div>
+                    <div class="swatch" style="background-color: var(--color-primary-lighter-1)">.</div>
+                    <div class="swatch" style="background-color: var(--color-primary)">.</div>
+                    <div class="swatch" style="background-color: var(--color-primary-darker-1)">.</div>
+                    <div class="swatch" style="background-color: var(--color-primary-darker-2)">.</div>
+                    <div class="swatch" style="background-color: var(--color-primary-darker-3)">.</div>
+                    <div class="swatch" style="background-color: var(--color-primary-darker-4)">.</div>
     
                 </div>
             </div>
@@ -592,11 +600,10 @@
             
             <ul>
                 <li><h3>Contact</h3></li>
-                <li><a href="https://github.com/soggybag/frmwrk-css">GitHub</a></li>
+                <li><a href="https://github.com/GSCrawley/stylin_styles">GitHub</a></li>
             </ul>
         </div>
-    
-        <script src="./js/frmwrk-slides.js"></script>
-        <script src="./js/frmwrk-slides-2.js"></script>
+        <script src="./simple-slides.js"></script>
+        
     </body>
     </html>
