@@ -16,7 +16,7 @@
                 <li><a href="#navbar">Navbar</a></li>
                 <li><a href="#headings">Headings</a></li>
                 <li><a href="#type">Type</a></li>
-                <li><a href="#forms">forms</a>
+                <li><a href="#forms">Forms</a>
                 <li><a href="#footer">Footer</a></li>
                 <li><a href="https://github.com/GSCrawley/stylin_styles.git">GitHub Repo</a></li>
                 </nav>
@@ -69,40 +69,109 @@
     
                 <p>Here's a 3-d button. Try a long click and see what happens.</p>
                 
-                <p><button class="press">Click Me</button> <pre>
-        <code>  button:hover { background-color: var(--fg-color); color: var(--bg-color);} </code></pre> </p>
-                
-    <button class = "delete">Click Me Too!</button>
-    <p>Customize buttons by adding CSS variables inline or with a class.</p>
-    <button class="round">Go!</button> 
-    
+                <button class="press">Click Me</button> 
+        <pre>
+        <code>  
+            button.press {
+            display: inline-block;
+            padding: 0.5em 0.75em;
+            color: #fff;
+            background-color: #4CAF50;
+            border: 1px solid;
+            border-radius: 0.5em;
+            font-size: 1em;
+            transition: 300ms;
+            box-shadow: 0 9px #999;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+          }
+          
+            button.press:hover {
+            background-color: #3e8e41;
+            color: var(--bg-color);
+          }
+          
+            button.press:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+          } 
+        </code></pre> 
+    <section>
+    <button class = "flash">Click Me Too!</button>
+</section>
+<section>
+   <p> <button class="round">Go!</button> </p>
+</section>
 <p><button style= font-size:1.5rem>Hello World!</button></p>
 
 <p><button class="shadow">Shadow</button></p>
 
-    
 <pre>
     <code>
-    &lt;button class=&quot;round&quot;&gt; Go! &lt;/button&gt;
+    button.flash {
+        font-weight: bold; 
+        background-color: #f85353; 
+        color: black;
+        position: relative;
+        border: none;
+        font-size: 14px;
+        padding: 20px;
+        width: 200px;
+        text-align: center;
+        transition-duration: 0.4s;
+        text-decoration: none;
+        overflow: hidden;
+        cursor: pointer;
+        }
+          
+    button.flash:after {
+        background:  white;
+        content: "";
+        display: block;
+        position: absolute;
+        padding-top: 300%;
+        padding-left: 350%;
+        margin-left: -20px !important;
+        margin-top: -120%;
+        opacity: 0;
+        transition: all 0.8s
+        }
+          
+    button.flash:active:after {
+        padding: 0;
+        margin: 0;
+        opacity: 1;
+        transition: 0s
+        }
+    </code>
+</pre> 
 
-    referring to class in CSS file:
-    button.round {
-    border-radius: 1.5em;
-    font-weight: bold;
-    background-color: #6bc253; 
-    color: black;
-    }
+<pre>
+    <code>
+        &lt;button class=&quot;round&quot;&gt; Go! &lt;/button&gt;
 
-    button.round:hover {
-    background-color: #6bc253;
-    color: white;
-    }
+        referring to class in CSS file:
+        button.round {
+        border-radius: 1.5em;
+        font-weight: bold;
+        background-color: #6bc253; 
+        color: black;
+        }
+
+        button.round:hover {
+        background-color: #6bc253;
+        color: white;
+        }
 </code>
 </pre>
     <pre>
         <code>
-   "Hello World" Inline style:
-    &lt;button style=font-size:2rem&gt;Hello World!&lt;/button&gt;
+        "Hello World" button using inline styling method:
+
+        &lt;button style=font-size:2rem&gt;Hello World!&lt;/button&gt;
 </p>
 </code>
 </pre>
@@ -119,26 +188,13 @@
         }
     </code>
 </pre>
-
-    <pre>
-        <code>
-
-
-
-        </code>
-    </pre>
-
             </section>
-            
-
-
+        
             <section>
                 <h2>Links</h2>
                 <p>This <a href="#">paragraph</a> contains a couple <a href="#">links</a> to show off their styles in context.</p>
             </section>
             
-
-            ---THIS SECTION could still use some more formatting - note: if rereading your markup comments
             <section>
                 <h2>Forms and controls</h2>
                 <form>
@@ -149,12 +205,12 @@
     
                     <label>
                         <span>Email:</span>
-                        <input type="email" placeholder="What is your name?">
+                        <input type="text" placeholder="What is your email?">
                     </label>
     
                     <label>
                         <span>Password:</span>
-                        <input type="password" placeholder="What is your name?">
+                        <input type="text" placeholder="What is your name?">
                     </label>
     
                     <label>
@@ -180,7 +236,38 @@
                 </form>
             </section>
     
-        <!-- This next section built w/web components -->
+<pre>
+    <code>
+        form {
+            max-width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 10px;
+            padding-bottom: 20px;
+            }
+                      
+        form span {
+            padding-bottom: 10px;
+            }
+                      
+        form > label {
+            display: flex;
+            flex-direction: column;
+            margin: 10px 0px;
+            }
+                      
+        input[type=text],
+        textarea {
+            border: 0.5px solid var(--color-sample-1);
+            font-size: 12pt;
+            padding: 10px;
+            border-radius: 20px;
+            max-width: 100%;
+            outline: none !important;
+            }
+        </code>
+            </pre>
             <section>
                 <h2>CheckBox</h2>
                   <div>
@@ -212,41 +299,40 @@
                 <h1>Colors</h1>
                 <div class="color-grid">
                     
-                    <div style="background-color: var(--foreground-color); color: var(--color-background)">--color-foreground</div>
+                    <div style="background-color: var(--foreground-color); color: var(--color-background)">.</div>
                     
-                    <div style="background-color: var(--background-color)">--color-background</div>
+                    <div style="background-color: var(--background-color)">.</div>
 
-                    <div style="background-color: var(--color-dark); color: var(--color-background)">--color-dark</div>
+                    <div style="background-color: var(--color-dark); color: var(--color-background)">.</div>
                     
-                    <div style="background-color: var(--color-light); color: var(--color-background)">--color-light</div>
+                    <div style="background-color: var(--color-light); color: var(--color-background)">.</div>
                     
-                    <div style="background-color: var(--color-md-light); color: var(--color-background)">--color-md-light</div>
+                    <div style="background-color: var(--color-md-light); color: var(--color-background)">.</div>
                     
-                    <div style="background-color: var(--color-md-dark); color: var(--color-background)">--color-md-dark</div>
+                    <div style="background-color: var(--color-md-dark); color: var(--color-background)">.</div>
                     
-                    <div style="background-color: var(--color-primary); color: var(--color-background)">--color-primary</div>
+                    <div style="background-color: var(--color-primary); color: var(--color-background)">.</div>
                     
-                    <div style="background-color: var(--color-info); color: var(--color-background)">--color-info</div>
+                    <div style="background-color: var(--color-info); color: var(--color-background)">.</div>
                     
-                    <div style="background-color: var(--color-success); color: var(--color-background)">--color-success</div>
+                    <div style="background-color: var(--color-success); color: var(--color-background)">.</div>
                     
-                    <div style="background-color: var(--color-danger); color: var(--color-background)">--color-danger</div>
+                    <div style="background-color: var(--color-danger); color: var(--color-background)">.</div>
                     
-                    <div style="background-color: var(--color-callout); color: var(--color-background)">--color-callout</div>
-                    <div style="background-color: var(--color-lightest)">--color-lightest</div>
+                    <div style="background-color: var(--color-callout); color: var(--color-background)">.</div>
+                    <div style="background-color: var(--color-lightest)">.</div>
                 </div>
             </section>
             
             <section id="navbar">
-                <h1>Navbar</h1>
+                <h2>Navbars</h2>
                 
-                <h2>Navbar 1</h2>
+                
                 <p>A navbar with all elements on the left.</p>
-                <p>Use a single child under <code>div.navbar</code>.</p>
     
-                <div class="navbar">
+                <div class="navbar1">
                     <ul>
-                        <li><h1 class="title">TITLE</h1></li>
+                        <li><a class="title">TITLE</a></li>
                         <li><a href="#">Link 1</a></li>
                         <li><a href="#">Link 2</a></li>
                         <li><a href="#">Link 3</a></li>
@@ -270,22 +356,14 @@
                     </pre>
                 </div>
     
-    
-    
-                
-                <h2>Navbar 2</h2>
                 <p>A navbar with groups of elements on the left and the right.</p>
-                <p>Use two children under <code>div.navbar</code>.</p>
-                <div class="navbar">
+                
+                <div class="navbar2">
                     <ul>
-                        <li><h1 class="title">TITLE</h1></li>
-                        <li><a href="#">Products</a></li>
-                        <li><a href="#">Mission</a></li>
-                    </ul>
-                    
-                    <ul>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li style="float:left"><a href="#">Products</a></li>
+                        <li style="float:left"><a href="#">Mission</a></li>
+                        <li style="float:right; padding-right:1rem"><a href="#">About</a></li>
+                        <li style="float:right"><a href="#">Contact</a></li>
                     </ul>
                 </div>
     
@@ -294,14 +372,10 @@
                         <code>
     &lt;div class=&quot;navbar&quot;&gt;
         &lt;ul&gt;
-            &lt;li&gt;&lt;h1 class=&quot;title&quot;&gt;TITLE&lt;/h1&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Products&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Mission&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-        
-        &lt;ul&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+            &lt;li style=&quot;float:left&quot;&gt;&lt;a href=&quot;#&quot;&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li style=&quot;float:left&quot;&gt;&lt;a href=&quot;#&quot;&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+            &lt;li style=&quot;float:right; padding-right:1rem&quot;&gt;&gt;&lt;a href=&quot;#&quot;&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+            &lt;li style=&quot;float:right&quot;&gt;&gt;&lt;a href=&quot;#&quot;&gt;Link 4&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
     &lt;/div&gt;
                         </code>
@@ -310,12 +384,9 @@
                 
                 <p>here is an alternative with the site title on the left and links on the right.</p>
     
-                <div class="navbar">
+                <div class="navbar3">
                     <ul>
-                        <li><h1 class="title">TITLE</h1></li>
-                    </ul>
-                    
-                    <ul>
+                        <h1><a style="float:left;color:white">TITLE</a></h1>
                         <li><a href="#">Products</a></li>
                         <li><a href="#">Mission</a></li>
                         <li><a href="#">About</a></li>
@@ -328,10 +399,7 @@
                             <code>
     &lt;div class=&quot;navbar&quot;&gt;
         &lt;ul&gt;
-            &lt;li&gt;&lt;h1 class=&quot;title&quot;&gt;TITLE&lt;/h1&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-        
-        &lt;ul&gt;
+            &lt;li&gt;&lt;a style=&quotfloat:left;color:white&quot;&gt;TITLE&lt;/h1&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Products&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Mission&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
@@ -342,52 +410,48 @@
                         </pre>
                     </div>
                     
-    
-    
+
+    <p>With three children the second child will be centered. 
+        This example places the site title in the center.</p>
                 
-                <h2>Navbar 3</h2>
-                <p>With three children the second child will be centered. 
-                    This example places the site title in the center.</p>
-                <div class="navbar">
-                    <ul>
-                        <li><a href="#">Products</a></li>
-                        <li><a href="#">Mission</a></li>
-                    </ul>
-                    
-                    <ul>
-                        <li><h1 class="title">TITLE</h1></li>
-                    </ul>
-                    
-                    <ul>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
+        <div class="topnav">
+
+            <div class="topnav-centered">
+              <a href="#home" class="active">Home</a>
+            </div>
+        
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+          
+            <div class="topnav-right">
+              <a href="#search">Search</a>
+              <a href="#about">About</a>
+            </div>
+          
+          </div>
     
                 <div>
-                        <pre class="code-block">
-                            <code>
-    &lt;div class=&quot;navbar&quot;&gt;
-        &lt;ul&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Products&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Mission&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-        
-        &lt;ul&gt;
-            &lt;li&gt;&lt;h1 class=&quot;title&quot;&gt;TITLE&lt;/h1&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-        
-        &lt;ul&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/div&gt;
-                            </code>
-                        </pre>
-                    </div>
-    
-    
-            </section>
+    <pre class="code-block">
+        <code>
+        &lt;div class=&quot;topnav&quot;&gt;
+        &lt;div class=&quot;topnav-centered&quot;&gt;
+        &lt;href=&quot;#home&quot;class=&quot;active&quot;&gt;Home&lt;/a&gt;
+        &lt;/div&gt;
+                                
+        &lt;a href=&quot;#news&quot;&gt;News&lt;/a&gt;
+        &lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;
+                                  
+        &lt;div class=&quot;topnav-right&quot;&gt;
+        &lt;a href=&quot;#search&quot;&gt;Search&lt;/a&gt;
+        &lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt;
+        &lt;/div&gt;
+                                  
+        &lt;/div&gt;
+                       
+            </code>
+        </pre>
+    </div>
+</section>
             
             
             
@@ -420,10 +484,12 @@
             <section>
                 <h3>Components</h3>
                
-                    <pre><code>
-                        This Alien slideshow uses a custom web component that I created. 
-                        &lt;script src=&quot;./simple-slides.js&quot;&gt;&lt;script&gt;
-                    </code></pre>
+                <pre>
+                    <code>
+                    This Alien slideshow uses a custom web component that I created. 
+                    &lt;script src=&quot;./simple-slides.js&quot;&gt;&lt;script&gt;
+                    </code>
+                </pre>
     
                     <div>
                         <div style="margin:2em">
@@ -446,13 +512,19 @@
                 <h3>Full Color Palette</h3>
     
                 <div class="">
-                    <h1>SASS to CSS Custom Properties</h1>
+                    <ransom-note>SASS to CSS Custom Properties</ransom-note>
     
                     <pre>
-                        
-                        This example uses SASS to generate a range of colors defined 
-                        as CSS Custom Properties. These are the base colors.
-                        
+                        <code>
+                The above custom ransom note font was made with a web component!                                                                 
+                &lt;script src=&quot;./ransom-note.js&quot;&gt;&lt;script&gt;
+                        </code>
+                </pre>
+                <pre>
+                    <code>
+                This example uses SASS to generate a range of colors defined 
+                as CSS Custom Properties. These are the base colors.
+            </code>
                     </pre>
     
       <div class="swatch-container">
@@ -592,17 +664,11 @@
             </ul>
             
             <ul>
-                <li><h3>Resources</h3></li>
-                <li><a href="">CSS Tricks</a></li>
-                <li><a href="">CSS Tricks</a></li>
-            </ul>
-            
-            <ul>
                 <li><h3>Contact</h3></li>
                 <li><a href="https://github.com/GSCrawley/stylin_styles">GitHub</a></li>
             </ul>
         </div>
         <script src="./simple-slides.js"></script>
-        
+        <script src="./ransom-note.js"></script>
     </body>
     </html>
